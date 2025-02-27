@@ -1,3 +1,51 @@
 from django.db import models
 
 # Create your models here.
+
+class Patient(models.Model):
+    name = models.CharField(max_length=100)
+    age = models.IntegerField()
+    email = models.EmailField()
+    phone = models.CharField(max_length=15)
+    message = models.TextField()
+    date = models.DateField()
+
+    def __str__(self):
+        return self.name
+
+class Doctor(models.Model):
+    name=models.CharField(max_length=50)
+    age = models.IntegerField()
+    email =models.EmailField()
+    department=models.DateField()
+    def __str__(self):
+        return self.name
+
+    #create a staff model firstname,lastname,position,phone,email,hiredate
+    #REturn firstname and lastname
+
+class Staff(models.Model):
+    firstname = models.CharField(max_length=15)
+    lastname = models.CharField(max_length=15)
+    position = models.CharField(max_length=15)
+    phone = models.CharField(max_length=15)
+    email = models.EmailField()
+    hiredate = models.DateField()
+
+    def __str__(self):
+        return self.firstname
+        return self.lastname
+
+
+
+
+#creat a ward model name,totalbeds,availablebeds,
+  #return the name
+
+class Ward(models.Model):
+    name = models.CharField(max_length=100)
+    totalbeds = models.IntegerField()
+    availablebeds = models.IntegerField()
+
+    def __str__(self):
+        return self.name
