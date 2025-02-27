@@ -8,4 +8,14 @@ def service(request):
     return render(request,'service-details.html')
 
 def starter(request):
-    return render(request,'starter-page.html')
+    return render(request,'starter.html')
+def about(request):
+    return render(request,'about.html')
+
+def services(request):
+    return render(request,'services.html')
+
+def departments(request):
+    return render(request,'departments.html')
+def doctors(request):
+    return render(request,'doctors.html')
