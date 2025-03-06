@@ -2,11 +2,11 @@
 from django.contrib import admin
 from django.urls import path
 from hospitalapp import views
-from hospitalapp.views import service
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index,name='home'),
+    path('home/', views.index,name='home'),
     path('service/', views.service,name='service'),
 
     path('starter/', views.starter,name='starter'),
@@ -17,7 +17,10 @@ urlpatterns = [
     path('appointment/', views.Appoint,name='appointment'),
     path('contact/', views.contacts,name='contact'),
     path('show/', views.show,name='show'),
-    path('delete/<int:id>', views.delete),
+    path('delete/<int:id>', views.delete, ),
+    path('edit/<int:id>', views.edit, name='edit'),
+    path('', views.register, name='register'),
+    path('login/', views.login_view, name='login'),
 
 
 ]
